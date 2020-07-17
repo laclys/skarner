@@ -4,18 +4,21 @@
     "build": "snowpack build",
     "test": "jest",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "lint": "prettier --check \"src/**/*.{js,jsx}\""
+    "lint": "prettier --check \"src/**/*.{js,jsx}\"",
+    "install": "snowpack install"
   },
   "dependencies": {
+    "antd": "^4.4.2",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "react-dom": "^16.13.0",
+    "swr": "^0.2.3",
+    "unfetch": "^4.1.0"
   },
   "devDependencies": {
     "@snowpack/app-scripts-react": "^1.6.0-alpha.0",
-    "@testing-library/jest-dom": "^5.5.0",
-    "@testing-library/react": "^10.0.3",
-    "jest": "^25.4.0",
+    "babel-plugin-import": "^1.13.0",
     "prettier": "^2.0.5",
     "snowpack": "^2.6.4"
-  }
+  },
+  "__npminstall_done": false
 }
