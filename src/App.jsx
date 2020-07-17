@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
-import Button from 'antd/es/button'
-import fetch from 'unfetch'
+import React from 'react';
 import useSWR from 'swr'
+import fetch from 'unfetch'
+import Button from 'antd/es/button'
+import List from 'antd/es/list'
+// css
 import 'antd/es/button/style/css'
-
+import 'antd/es/list/style/css'
+// css module
 import style from './App.module.css'
 
 const URL = `api/topics/hot.json`
@@ -14,8 +17,12 @@ const getList = async () => {
 }
 
 const App = () => {
-  const { data } = useSWR(URL, getList)
+  const { data, error } = useSWR(URL, getList)
   console.log('list', data)
+
+  if (error) {
+    return <div>failed to load</div>
+  }
 
   return (
     <div className={style.wrapper}>
@@ -27,7 +34,7 @@ const App = () => {
         <div>
           {data.length}
         </div>
-      ) : null}
+      ) : <div>no data!</div>}
     </div>
   );
 }
