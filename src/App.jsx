@@ -1,5 +1,5 @@
 import React from 'react';
-import useSWR from 'swr';
+import useSWR, { mutate } from 'swr';
 import fetch from 'unfetch';
 import Button from 'antd/es/button';
 import List from 'antd/es/list';
@@ -27,7 +27,7 @@ const App = () => {
       <Button
         className={style.reloadBtn}
         type="primary"
-        onClick={() => getList(URL)}
+        onClick={() => mutate(URL)}
       >
         Reload
       </Button>
