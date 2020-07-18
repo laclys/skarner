@@ -12,3 +12,8 @@ h3 {
 .reloadBtn {
   width: 200px;
 }
+
+.contentWrapper {
+  padding: 32px;
+  width: 100%;
+}
